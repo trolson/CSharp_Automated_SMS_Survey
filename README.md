@@ -1,30 +1,22 @@
 # SMS_Example_Survey
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+Run with Ngrok. https://ngrok.com/download
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+Once downloaded, navigate to the downloaded ngrok directory in command prompt and run: ngrok http 5000 
 
-Before using `Deploy to Azure` change in `azuredeploy.json` value `GIT_REPOSITORY_URL_HERE` by public url of this project on remote git server. 
-Before using `Deploy to Heroku` change in `app.json` value `GIT_REPOSITORY_URL_HERE` by public url of this project on remote git server. 
 
 ## Run
 
-### Directly
+Open the project solution in Visual Studio. Enter in your bandwidth catapult account credentials in the FinishStartup.cs file.
+Run the program by starting the web server (press the green run button in Visual Studio). Next, navigate to the ngrok url
+you got. This will be a get request that builds the application on your catapult account. Navigate to the catapult dashboard and
+go to your apps. Grab the callback url and phone number that was assigned and enter them in for callbackurl and from number
+in the RunAsync method in FinishStartup.cs
 
-```bash
-export BANDWIDTH_USER_ID=<YOUR-USER-ID>
-export BANDWIDTH_API_TOKEN=<YOUR-API-TOKEN>
-export BANDWIDTH_API_SECRET=<YOUR-API-SECRET>
-dotnet restore # to install dependencies
-dotnet run
-```
+Now, run the program again in Visual Studio. You can then navigate to the browser with the web app running 
+or use Postman (recommended) to perform get and post requests to the application. You can post to create a new survey,
+add questions to a survey, and add numbers to the survey that will send out the survey to the numbers posted. 
+Get requests can be performed to view all the surveys (name and id) as well as viewing the results of a single survey.
 
-### Via Docker
+A full guide for the get and post requests using postman can be found on the wiki.
 
-```bash
-# to prepare image
-docker build -t my-web-app-dev -f Dockerfile.Development .
-
-# to run the app (it will listen port 8080)
-docker run -i -t --rm -p 8080:5000 -e BANDWIDTH_USER_ID=<YOUR-USER-ID> -e BANDWIDTH_API_TOKEN=<YOUR-API-TOKEN> -e BANDWIDTH_API_SECRET=<YOUR-API-SECRET> my-web-app-dev 
-```
