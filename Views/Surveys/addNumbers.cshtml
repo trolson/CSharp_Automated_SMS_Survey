@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numbers</title>
+    <link href="https://d3l0ifulerbodr.cloudfront.net/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<form name="myForm">
+    <div id="dynamicInput" class="form-input clearfix">
+        <label for="input-questions">Phone Number 1</label>
+        <input type="text" name="myInputs[]" id="input-questions">
+    </div>
+    <button class="button button--secondary button--small button--light button--hover-go button--right" onclick="addInput('dynamicInput');" type="button">Add Row</button>
+    <script src="/js/addInput.js" language="Javascript" type="text/javascript"></script>
+
+    <button class="button button--submit button--hover-go button--right" type="submit" id="formtest" onclick="numbersSubmit()"> Submit </button>
+
+</form>
+<script src="/js/numbersSubmit.js" language="Javascript" type="text/javascript"></script>
+</body>
+</html>

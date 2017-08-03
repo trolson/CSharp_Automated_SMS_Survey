@@ -6,9 +6,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="wwwroot\js\displayQuestions.js" />
+    <Content Include="wwwroot\js\numbersSubmit.js" />
     <Content Include="wwwroot\js\questionSubmit.js" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\Surveys\addNumbers.cshtml" />
     <None Include="Views\Surveys\addQuestions.cshtml" />
     <None Include="Views\Surveys\createSurvey.cshtml" />
     <None Include="wwwroot\js\addInput.js" />
