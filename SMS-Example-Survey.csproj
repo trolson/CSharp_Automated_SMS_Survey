@@ -5,6 +5,11 @@
     <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="wwwroot\js\displayQuestions.js" />
+    <Content Include="wwwroot\js\questionSubmit.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Surveys\addQuestions.cshtml" />
     <None Include="Views\Surveys\createSurvey.cshtml" />
     <None Include="wwwroot\js\addInput.js" />
     <None Include="wwwroot\js\formSubmit.js" />

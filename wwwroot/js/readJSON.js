@@ -1,6 +1,6 @@
 var req = new XMLHttpRequest();
 var table = document.getElementById("survey-table");
-req.open('GET', 'https://e9815099.ngrok.io/api/surveys');
+req.open('GET', '/api/surveys');
 req.onload = function () {
     var data = JSON.parse(req.responseText);
     //data = data.surveys;

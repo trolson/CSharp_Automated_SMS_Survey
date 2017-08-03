@@ -9,7 +9,7 @@ function formSubmit() {
     var myObj = { "surveyName": s_name, "phoneNumber": phone, "questions": question_array };
     var myJSON = JSON.stringify(myObj);
     var request = new XMLHttpRequest();
-    request.open('POST', "https://e9815099.ngrok.io/api/surveys");
+    request.open('POST', "/api/surveys");
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(myJSON);
  }

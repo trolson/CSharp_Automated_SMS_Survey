@@ -87,6 +87,12 @@ namespace SMS_Example_Survey.Controllers
             return View();
         }
 
+        [Route("addQuestions/{id}")]
+        [HttpGet]
+        public IActionResult addQuestions(int id)
+        {
+            return View();
+        }
 
     }
 }

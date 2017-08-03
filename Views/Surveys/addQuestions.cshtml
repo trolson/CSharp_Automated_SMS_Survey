@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Questions</title>
+    <link href="https://d3l0ifulerbodr.cloudfront.net/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="survey-info"></div>
+<div class="table-wrap">
+<table cellpadding="0" cellspacing="0" class="small" id="question-table">
+    <thead>
+    <tr>
+        <th>Question ID</th>
+        <th>Question Text</th>
+        <th>Index</th>
+        <th>Responses</th>
+    </tr>
+    </thead>
+</table>
+</div>
+<br/>
+<br/>
+<form name="myForm">
+    <div class="form-input clearfix required">
+        <label for="question-text">Question Text</label>
+        <input type="text" value="" name="s-name" id="question-text" required />
+    </div>
+    <div class="form-input clearfix required">
+        <label for="index">Question Index</label>
+        <input type="text" value="" id="index" />
+    </div>
+
+    <button class="button button--submit button--hover-go button--right" type="submit" id="formtest" onclick="questionSubmit()"> Submit </button>
+
+</form>
+
+<script src="/js/questionSubmit.js" language="Javascript" type="text/javascript"></script>
+<script src="/js/displayQuestions.js" language="Javascript" type="text/javascript"></script>
+
+<br />
+<br />
+<!-- End component HTML -->
+</body>
+</html>
