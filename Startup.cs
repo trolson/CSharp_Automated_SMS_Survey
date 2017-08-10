@@ -1,32 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Bandwidth.Net.Extra;
 using Bandwidth.Net.Api;
 using Microsoft.Extensions.Configuration;
-using System.IO;
-using SQLite;
-using System.Diagnostics;
-using System.Collections;
-using Bandwidth.Net;
-using SMS_Example_Survey.Controllers;
 
 namespace SMS_Example_Survey
 {
     public class Startup
     {
         
-        private const string UserId = ""; //{user_id}
-        private const string Token = ""; //{token}
-        private const string Secret = ""; //{secret}
+        private const string UserId = "u-spj2plotunygiwpvxxzjera"; //{user_id}
+        private const string Token = "t-zx7hi5ryulp2wihxszes2ba"; //{token}
+        private const string Secret = "3nynyppdgl62r73gg5kkuitldavogezq3ps75fi"; //{secret}
         
-        //public const string CatapultPhone = "+19102262840";
 
         public Startup(IHostingEnvironment env)
         {
@@ -80,8 +68,6 @@ namespace SMS_Example_Survey
                         AreaCode = "910" // Fill query fileds for new phone number. See http://dev.bandwidth.com/ap-docs/methods/availableNumbers/postAvailableNumbersLocal.html
                     }
                 },
-                // Uncomment this line if you would like reserve a SIP domain on the Bandwidth server (use HttpContext.Items["DomainId"] to get id of reserved domain)
-                // DomainName = "my-domain",
 
                 // Messages callback handler
                 MessageCallbackDictionary = CallbackEvents.Messages
@@ -95,13 +81,6 @@ namespace SMS_Example_Survey
 
             // Static files
             app.UseStaticFiles();
-
-
-            //really need to somehow grab the phonenumber or applicationId here and pass it on
-            //the real question is how tf do i get that...
-
-            //complete the rest of program setup and send first question
-            //finishSetup();
             FinishStartup.Start();
 
         }

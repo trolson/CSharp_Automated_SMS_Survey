@@ -42,12 +42,12 @@ function addHTMLAnswers(data) {
 
 function addResponseTables(data2) {
     htmlResponseString = "<p>Question Text: " + data2.questionText + "</p>";
-    htmlResponseString += '<table class="small"><tr><th>Answer Id</th><th>Phone Number</th><th>Answer Text</th><th>Timestamp</th></tr>';
+    htmlResponseString += '<table class="small"><tr><th>Answer Id</th><th>Phone Number</th><th>Answer Text</th></tr>';
     if(data2.answers == null) {
         return;
     }
     for(j = 0; j < data2.answers.length; j++) {
-        htmlResponseString += '<tr><td>' + data2.answers[j].answerId + '</td><td>' + data2.answers[j].phoneNumber + '</td><td>' + data2.answers[j].answerText + '</td><td>' + data2.answers[j].timestamp + '</td></tr>';
+        htmlResponseString += '<tr><td>' + data2.answers[j].answerId + '</td><td>' + data2.answers[j].phoneNumber + '</td><td>' + data2.answers[j].answerText + '</td></tr>';
     }
 
     htmlResponseString += "</table></br>";

@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace SMS_Example_Survey.JsonModels
 {
+    /// <summary>
+    /// A JSON model for an answer
+    /// </summary>
     public class JQuestion
     {
         public int questionId { get; set; }

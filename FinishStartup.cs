@@ -1,21 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Bandwidth.Net.Extra;
 using Bandwidth.Net.Api;
-using Microsoft.Extensions.Configuration;
-using System.IO;
 using SQLite;
-using System.Diagnostics;
-using System.Collections;
 using Bandwidth.Net;
-using SMS_Example_Survey.Controllers;
 
 
 
@@ -23,13 +11,13 @@ namespace SMS_Example_Survey
 {
     public class FinishStartup
     {
-        public static SQLiteConnection db = new SQLiteConnection("sms_survey.sqlite"); //db name ex: test.sqlite 
-        private const string UserId = ""; //{user_id}
-        private const string Token = ""; //{token}
-        private const string Secret = ""; //{secret}
+        public static SQLiteConnection db = new SQLiteConnection("sms_survey.sqlite"); //db name
+        private const string UserId = "u-spj2plotunygiwpvxxzjera"; //{user_id}
+        private const string Token = "t-zx7hi5ryulp2wihxszes2ba"; //{token}
+        private const string Secret = "3nynyppdgl62r73gg5kkuitldavogezq3ps75fi"; //{secret}
 
-        private const string SurveyNumber = ""; // <-- This must be a Bandwidth number on your account
-        private const string CallbackUrl = ""; // <-- This is the callback url of the app created
+        private const string SurveyNumber = "+19104153043"; // <-- This must be a Bandwidth number on your account
+        private const string CallbackUrl = "https://4ab3eede.ngrok.io/bandwidth/callback/message"; // <-- This is the callback url of the app created
 
         public static void Start() {            
             createTables();
@@ -44,7 +32,7 @@ namespace SMS_Example_Survey
 
         public static void sendFirstQuestion(List<string> phoneNumbers, int surveyId)
         {
-            var client = new Client(UserId, Token, Secret); //I think the thing above may have setup a client
+            var client = new Client(UserId, Token, Secret); 
             string text = Question.getQuestionFromSurveyAndIndex(db, surveyId, 0);
 
             foreach (var number in phoneNumbers) {

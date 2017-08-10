@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Bandwidth.Net.Extra;
 using Bandwidth.Net.Api;
@@ -25,22 +23,6 @@ namespace SMS_Example_Survey
 
                         string fromNum = data.From;
                         string response = data.Text;
-
-                        //check status table to see if from # is in middle of survey
-                        //if (!Status.checkIfPhoneNumberExists(FinishStartup.db, fromNum)) {
-                        //    int surveyId = Survey.getSurveyIdFromPhoneNumber(FinishStartup.db, data.To);
-                        //    questionPack = Question.createQuestionListFromSurveyId(FinishStartup.db, surveyId);
-                        //    //Send message
-                        //    await message.SendAsync(new MessageData
-                        //    {
-                        //        From = data.To,
-                        //        To = data.From,
-                        //        Text = questionPack[0].questionText
-                        //    });
-                        //    //update Status table
-                        //    int nextQID = Question.getQuestionIdFromIndex(FinishStartup.db, 1, surveyId);
-                        //    Status.updateStatus(FinishStartup.db, fromNum, nextQID);
-                        //}
 
                         //query to get questionID from status table to perform answer insert
                         int QID = Status.getQuestionId(FinishStartup.db, fromNum);
