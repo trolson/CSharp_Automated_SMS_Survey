@@ -23,10 +23,13 @@ namespace SMS_Example_Survey
 {
     public class FinishStartup
     {
-        public static SQLiteConnection db = new SQLiteConnection(""); //db name ex: test.sqlite 
+        public static SQLiteConnection db = new SQLiteConnection("sms_survey.sqlite"); //db name ex: test.sqlite 
         private const string UserId = ""; //{user_id}
         private const string Token = ""; //{token}
         private const string Secret = ""; //{secret}
+
+        private const string SurveyNumber = ""; // <-- This must be a Bandwidth number on your account
+        private const string CallbackUrl = ""; // <-- This is the callback url of the app created
 
         public static void Start() {            
             createTables();
@@ -53,10 +56,10 @@ namespace SMS_Example_Survey
         {
             var sms = await client.Message.SendAsync(new MessageData
             {
-                From = "app phone number here", // <-- This must be a Bandwidth number on your account
+                From = SurveyNumber,
                 To = phoneNumber,
                 Text = message,
-                CallbackUrl = "app callback url here" // <-- This is the callback url of the app created
+                CallbackUrl = CallbackUrl
             });
 
             int qId = Question.getQuestionIdFromIndex(db, 0, surveyId);

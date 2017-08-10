@@ -22,9 +22,9 @@ namespace SMS_Example_Survey
     public class Startup
     {
         
-        private const string UserId = "u-r4ahlwg5duiv6qb6fe6hyuq"; //{user_id}
-        private const string Token = "t-j6eckdvusfeatiqk65nk2oy"; //{token}
-        private const string Secret = "5zoq5js6wlewsxtcls2yg4s5bornjtqgaiihoua"; //{secret}
+        private const string UserId = ""; //{user_id}
+        private const string Token = ""; //{token}
+        private const string Secret = ""; //{secret}
         
         //public const string CatapultPhone = "+19102262840";
 
